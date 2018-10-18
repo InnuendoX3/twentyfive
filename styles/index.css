@@ -17,8 +17,6 @@ h1 {
    margin-bottom: 2px;
 }
 
-
-
 #tabla-completa {
    width: 402px;
    height: 432px;
@@ -32,7 +30,7 @@ h1 {
 }
 
 #pie-tabla {
-   position: absolute; /*So position child works?*/
+   position: relative;
    width: 400px;
    height: 90px;
    margin: 0 auto;
@@ -47,7 +45,6 @@ h1 {
    margin: 5px 5px;
    font-family: sans-serif;
    color: black;
-   /*loat:left;*/
 }
 
 #tiempo {
@@ -57,17 +54,20 @@ h1 {
    margin: 5px 5px;
    font-family: sans-serif;
    color: black;
-   /*float: right;*/
 }
 
 #tabla-actual {
-   margin-top: 50px;
+   position: absolute;
+   /*Centrado copiado*/
+   margin-left: auto;
+   margin-right: auto;
+   left: 0;
+   right: 0;
+   margin-top: 25px;
 }
 
 #ask-boards-div {
-   position: relative;
-   top: 150px;
-   margin: 5px;
+   margin: 150px 5px 5px 5px;
    font-size: 25px;
 }
 
@@ -87,6 +87,11 @@ h1 {
 #again-button {
    margin-top: 30px;
    width: auto;
+}
+
+.link-noLink {
+   text-decoration: none;
+   color: inherit;
 }
 
 .button-table {
@@ -150,15 +155,30 @@ h1 {
    border-color: #4f8bff;
 }
 
-/*Responsive*/
+/*Visores de Responsive*/
+.visor {
+   text-align: right;
+   position: relative;
+   font-family: serif;
+   font-size: 10px;
+   color: black;
+   margin-top: 50px;
+}
+
+#visor1{
+   display: none;
+}
+#visor2{
+   display: none;
+}
+#visor3{
+   display: none;
+}
+
+/*Responsive SMALL*/
 @media screen and (max-width: 425px) {
-
-   body {
-     background-color: yellow;
-   }
-
    h1 {
-      font-size: 8vw;
+      font-size: 7vw;
    }
 
    .button-table {
@@ -196,16 +216,23 @@ h1 {
    #round-result {
       font-size: 6vw;
    }
+
+   /*Visores*/
+   #visor1{
+      display: block;
+   }
+   #visor2{
+      display: none;
+   }
+   #visor3 {
+      display: none;
+   }
 }
 
-
+/*Responsive x-small*/
 @media screen and (max-width: 360px) {
-   body {
-       background-color: blue;
-   }
-
    .button-table {
-      font-size: 30px;
+      font-size: 28px;
    }
 
    .page-button {
@@ -225,20 +252,28 @@ h1 {
       width: 100%;
       height: 310px;
    }
+
+   /*Visores*/
+   #visor1 {
+      display: none;
+   }
+   #visor2 {
+      display: block;
+   }
+   #visor3 {
+      display: none;
+   }
 }
 
+/*Responsive xx-small*/
 @media screen and (max-width: 300px) {
-   body {
-       background-color: red;
-   }
-
    h1 {
       letter-spacing: 10px;
    }
 
 
    .button-table {
-      font-size: 28px;
+      font-size: 26px;
    }
 
    .page-button {
@@ -261,5 +296,16 @@ h1 {
 
    #ask-boards-div p {
       font-size: 8vw;
+   }
+
+   /*Visores*/
+   #visor1{
+      display: none;
+   }
+   #visor2{
+      display: none;
+   }
+   #visor3 {
+      display: block;
    }
 }
